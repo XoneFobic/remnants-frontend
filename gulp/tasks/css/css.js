@@ -13,7 +13,7 @@
   module.exports = function () {
     return gulp.src(source.css.index)
       .pipe($.sourcemaps.init())
-      .pipe($.stylus()).on('error', handleError)
+      .pipe($.stylus({'include css': true})).on('error', handleError)
       .pipe($.sourcemaps.write('./maps'))
       .pipe(gulp.dest(destination.css))
       .pipe(sync.stream());

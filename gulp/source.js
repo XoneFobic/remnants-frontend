@@ -13,10 +13,18 @@
 
   source.js        = {};
   source.js.app    = [
-    'source/coffee/app.coffee'
+    'source/typescript/app.ts',
+    'source/typescript/**/*.module.ts',
+    'source/typescript/**/*.*.ts',
+    'tools/typings/**/*.ts'
   ];
   source.js.vendor = [
-    'bower_components/angular/angular.js'
+    'bower_components/angular/angular.js',
+    'bower_components/angular-animate/angular-animate.js',
+    'bower_components/angular-aria/angular-aria.js',
+    'bower_components/angular-material/angular-material.js',
+    'bower_components/socket.io-client/socket.io.js',
+    'bower_components/angular-socket-io/socket.js'
   ];
 
   module.exports = source;

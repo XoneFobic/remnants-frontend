@@ -2,13 +2,29 @@
     'use strict';
     angular.module('remnants', [
         'app.core',
-        'app.socket'
+        'app.socket',
+        'app.material',
+        'app.page'
     ]);
 })();
 
 (function () {
     'use strict';
-    angular.module('app.core', []);
+    angular.module('app.core', [
+        'ui.router'
+    ]);
+})();
+
+(function () {
+    'use strict';
+    angular.module('app.material', [
+        'ngMaterial'
+    ]);
+})();
+
+(function () {
+    'use strict';
+    angular.module('app.page', []);
 })();
 
 (function () {
@@ -28,6 +44,22 @@
 
 (function () {
     'use strict';
+    angular.module('app.core').config(coreRoute);
+    function coreRoute($stateProvider, $locationProvider, $urlRouterProvider) {
+        $locationProvider.html5Mode(false);
+        $urlRouterProvider.otherwise('/page/slack');
+        $stateProvider
+            .state('app', {
+            url: '',
+            abstract: true,
+            templateUrl: 'views/app.html'
+        });
+    }
+    coreRoute.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider'];
+})();
+
+(function () {
+    'use strict';
     angular.module('app.core').run(coreRun);
     function coreRun(socket) {
         socket.on('handshake', function (data) {
@@ -35,6 +67,33 @@
         });
     }
     coreRun.$inject = ['socket'];
+})();
+
+(function () {
+    'use strict';
+    angular.module('app.page').config(pageRoute);
+    function pageRoute($stateProvider) {
+        $stateProvider
+            .state('app.page', {
+            url: '/page',
+            templateUrl: 'views/page/index.html'
+        })
+            .state('app.page.slack', {
+            url: '/slack',
+            templateUrl: 'views/page/slack.html',
+            controller: 'PageSlackController',
+            controllerAs: 'page'
+        });
+    }
+    pageRoute.$inject = ['$stateProvider'];
+})();
+
+(function () {
+    'use strict';
+    angular.module('app.page').controller('PageSlackController', pageSlackController);
+    function pageSlackController() {
+        console.log('PageSlackController Loaded.');
+    }
 })();
 
 (function () {

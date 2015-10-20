@@ -13,7 +13,7 @@
   module.exports = function () {
     return gulp.src(source.js.vendor)
       .pipe($.sourcemaps.init())
-      .pipe($.ngAnnotate(options.js.annotate)).on('error', handleError)
+      //.pipe($.ngAnnotate(options.js.annotate)).on('error', handleError)
       .pipe($.concat(options.js.concat.vendor))
       .pipe($.uglify(options.js.uglify)).on('error', handleError)
       .pipe($.sourcemaps.write('./maps')).on('error', handleError)

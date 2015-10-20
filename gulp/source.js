@@ -24,7 +24,8 @@
     'bower_components/angular-aria/angular-aria.js',
     'bower_components/angular-material/angular-material.js',
     'bower_components/socket.io-client/socket.io.js',
-    'bower_components/angular-socket-io/socket.js'
+    'bower_components/angular-socket-io/socket.js',
+    'bower_components/angular-ui-router/release/angular-ui-router.js'
   ];
 
   module.exports = source;

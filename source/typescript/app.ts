@@ -3,6 +3,10 @@
 
   angular.module('remnants', [
     'app.core',
-    'app.socket'
+    'app.socket',
+
+    'app.material',
+
+    'app.page'
   ]);
 })();

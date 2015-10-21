@@ -1,4 +1,14 @@
-md-toolbar
+md-toolbar.md-whiteframe-z2(md-theme='top-header', md-scroll-shrink='', md-shrink-speed-factor='0.1', layout='row')
   .md-toolbar-tools
-
-section(ui-view='')
+    span(flex='10')
+    span Remnants | Silvermoon (EU)
+    span(flex)
+    md-button.md-accent.md-raised(ui-sref='app') Home
+    md-button.md-accent.md-raised(ui-sref='app.page.slack') Slack Self Invite
+    span(flex='10')
+md-content(layout='column', layout-fill)
+  header(style='height: 200px; background-color: #18B364;').md-whiteframe-z2
+  section(layout='row')
+    span(flex='15')
+    div(ui-view='', layout-fill)
+    span(flex='15')

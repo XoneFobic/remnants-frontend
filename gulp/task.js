@@ -3,7 +3,7 @@
 
   var task = {};
 
-  task.css = require('./tasks/css/css.js');
+  task.css = require('./tasks/css/stylus.js');
 
   task.html = {
     index: require('./tasks/html/index.js'),

@@ -9404,4 +9404,12 @@ md-tooltip {
   md-whiteframe {
     border: 1px solid #fff; } }
 
+body {
+  overflow: hidden;
+  background-color: #1e71a2;
+}
+md-content {
+  background-color: transparent;
+}
+
 /*# sourceMappingURL=maps/style.css.map */

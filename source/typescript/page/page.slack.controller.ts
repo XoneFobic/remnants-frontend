@@ -7,7 +7,7 @@
     var vm = this;
 
     vm.form = {
-      email: 'xonefobic+slack@gmail.com',
+      email   : 'testing@testing.com',
       password: 'testing'
     };
 

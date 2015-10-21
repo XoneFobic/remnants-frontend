@@ -38,7 +38,6 @@
     'use strict';
     angular.module('app.core').controller('CoreController', coreController);
     function coreController() {
-        console.log('CoreController Loaded.');
     }
 })();
 
@@ -144,7 +143,7 @@
     function pageSlackController(socket) {
         var vm = this;
         vm.form = {
-            email: 'xonefobic+slack@gmail.com',
+            email: 'testing@testing.com',
             password: 'testing'
         };
         vm.sendInvite = function () {
